@@ -23,10 +23,10 @@ class Solution:
 
         node = head
         next_node = node.next
-        k -= 1
-        while k:
+        count = k - 1
+        while count:
             tmp = next_node.next
-            if k == 1:
+            if count == 1:
                 head.next = self.reverse_(tmp, k, rest_len - k)
                 next_node.next = node
                 node = next_node
@@ -34,7 +34,7 @@ class Solution:
                 next_node.next = node
                 node = next_node
                 next_node = tmp
-            k -= 1
+            count -= 1
         return node
 
 
